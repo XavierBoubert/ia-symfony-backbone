@@ -1,0 +1,57 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after { content: ''; content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+
+html, body { font-family: "Open Sans", "Arial"; font-weight: 300; height: 100%; overflow: hidden; background: #00A0B1; }
+.clearfix { clear: both; }
+.chatmessage { width: 75%; margin: 20px auto; background: #fdfdfd; overflow: auto; position: relative; -webkit-box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, 0.4); box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, 0.4); }
+.messagebox { background: #f7f7f7; border: 1px solid #ddd; border-top: 0; padding: 10px 42px; position: relative; clear: both; }
+.messagebox .inputbox { display: block; margin-right: 100px; }
+.messagebox input { display: inline-block; height: 20px; line-height: 20px; vertical-align: middle; min-height: 37px; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin-bottom: 0; color: #666; padding: 5px 10px; border: 1px solid #ccc; -moz-box-shadow: 0 0 5px rgba(103,173,245,0.5); -webkit-box-shadow: 0 0 5px rgba(103,173,245,0.5); box-shadow: 0 0 5px rgba(103,173,245,0.5); -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 2px; border-color: #5c9fe4; background: #fff; font-size: 12px; font-weight: 400; -webkit-transition: border linear .2s,box-shadow linear .2s; -moz-transition: border linear .2s,box-shadow linear .2s; -o-transition: border linear .2s,box-shadow linear .2s; transition: border linear .2s,box-shadow linear .2s; }
+.messagebox button.send { display: inline-block; margin-bottom: 0; line-height: 20px; text-align: center; vertical-align: middle; cursor: pointer; border: 1px solid #ccc; border-color: #e6e6e6 #e6e6e6 #bfbfbf; border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25); border-bottom-color: #b3b3b3; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; position: absolute; top: 8px; right: 42px; padding: 6px 15px 7px 15px; color: #fff; text-shadow: 0 -1px 0 rgba(0,0,0,0.25); background-color: #006dcc; background-image: -moz-linear-gradient(top,#08c,#04c); background-image: -webkit-gradient(linear,0 0,0 100%,from(#08c),to(#04c)); background-image: -webkit-linear-gradient(top,#08c,#04c); background-image: -o-linear-gradient(top,#08c,#04c); background-image: linear-gradient(to bottom,#08c,#04c); background-repeat: repeat-x; border-color: #04c #04c #002a80; border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25) outline: 0; -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05); -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05); box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05); }
+.background-avatar { background: white; border: 3px solid white; border-radius: 30px; -webkit-box-shadow: 0 0 1px 0 rgba(0, 0, 0, .3); box-shadow: 0 0 1px 0 rgba(0, 0, 0, .3); float: left; height: 50px; overflow: hidden; position: relative; top: -20px; left: 15px; width: 50px; }
+.background-avatar img { width: 60px; height: 60px; border: 0; position: relative; top: -5px; left: -5px; }
+#chatmessagecontainer { overflow: auto; }
+#chatmessageinner p { padding: 10px; margin: 0; }
+#chatmessageinner .msgblock { background: #fff; margin: 0 42px; padding: 10px 10px 10px 40px; border: 1px solid #ddd; display: block; -moz-box-shadow: 1px 1px 2px rgba(0,0,0,0.05); -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,0.05); box-shadow: 1px 1px 2px rgba(0,0,0,0.05); }
+#chatmessageinner .msgblock strong { font-weight: 400; font-size: 12px; }
+#chatmessageinner .time { font-size: 11px; color: #999; font-style: italic; }
+#chatmessageinner .msg { margin-top: 10px; display: block; }
+.chat-title { font-size: 16px; font-weight: 700; padding: 15px 20px; background: #2E8DEF; color: white; margin-bottom: 15px; }
+.chat-title div { float: right; font-size: 12px; }
+.graph-item { margin-bottom: 30px; position: relative; }
+.column-left { float: left; width: 40%; position: relative; }
+.column-left div { padding: 0 30px; }
+.column-left h3 { font-size: 14px; font-weight: 700; padding: 15px 20px; background: #2E8DEF; color: white; }
+.column-left .column-left-bar { position: absolute; top: 50%; right: 0; height: 1px; width: 30px; background: black; padding: 0; }
+.column-right { float: left; width: 59%; }
+.column-right .column-right-response { margin-top: 15px; position: relative; background: #fff; padding: 10px; border: 1px solid #ddd; -moz-box-shadow: 1px 1px 2px rgba(0,0,0,0.05); -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,0.05); box-shadow: 1px 1px 2px rgba(0,0,0,0.05); }
+.column-right .column-right-response.first { margin-top: 3px; }
+.column-right .column-right-bar { position: absolute; top: 50%; left: -15px; height: 1px; width: 15px; background: black; }
+.column-right .column-right-bar div { position: absolute; top: -52px; left: 0; height: 52px; width: 1px; background: black; }
+.column-right .column-right-response span { cursor: help; color: #00A0B1; color: #00A0B1; font-weight: 700; left: -10px; position: absolute; top: -10px; }

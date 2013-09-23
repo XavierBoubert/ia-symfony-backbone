@@ -12,8 +12,24 @@ Demo
 --------
 
 Vous pouvez tester l'I.A. sur cette page et tenter de dialoguer avec elle : http://ia-symfony.xavierboubert.fr
+L'API REST pour lui parler : http://ia-symfony.xavierboubert.fr
 
-Et vous pouvez regarder le graphique des réponses apprises sur cette page : http://ia-symfony.xavierboubert.fr/graph.php
+Vous pouvez regarder le graphique des réponses apprises sur cette page : http://ia-symfony.xavierboubert.fr/graph
+
+Vous pouvez également tester la version de DEV sur http://ia-symfony.xavierboubert.fr/app_dev/
+
+Technologies
+--------
+
+Utilisation de ces différentes technologies :
+
+- Symfony 2.x
+- Doctrine
+- Twig
+- PHPUnit
+- Assetic
+- Compression des fichiers CSS et JavaScript avec la YUI Compressor
+- API REST
 
 
 Installation
@@ -21,4 +37,16 @@ Installation
 
 - Récupérez les fichiers sur votre serveur.
 - Créez une base de données MySQL puis executez-y le fichier ia.sql (vous pouvez ensuite supprimer ce fichier)
-- Mettez à jour le fichier 'engine/config.php' avec les infos de connexion de votre base.
+- Mettez à jour le fichier 'app/config/parameters.yml' avec les infos de connexion de votre base.
+
+
+Mise en PROD
+--------
+
+Utilisez le script 'app/mep.sh pour executer la mise en production du site (cela reset le cache et compile les fichiers JavaScript et CSS)
+
+
+Tests Unitaires
+--------
+
+Utilisez le script 'app/unittesting.sh' pour executer la génération des tests unitaires

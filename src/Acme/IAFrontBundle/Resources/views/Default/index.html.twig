@@ -1,0 +1,62 @@
+{% extends 'AcmeIAFrontBundle:Default:page.html.twig' %}
+
+{% block title %}I.A. (by Xavier Boubert){% endblock %}
+
+{% block stylesheets %}
+{% stylesheets filter='yui_css'
+	'bundles/acmeiafront/css/index.css'
+ %}
+    <link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
+{% endstylesheets %}
+{% endblock %}
+
+{% block javascripts_head %}
+<script type="text/javascript">
+	window.IA = {
+		avatar: 'http://robohash.org/set_set1/{{ robot_id }}?size=60x60',
+		userAvatar: '{{ asset('bundles/acmeiafront/img/unknown.jpg') }}'
+	};
+	</script>
+{% endblock %}
+
+{% block body %}
+<div id="chatmessage" class="chatmessage">
+		<h1 class="chat-title">CHAT AVEC I.A. <div>Phrases acquises : <span id="contentCount">{{ content_count }}</span></div></h1>
+
+		<div id="chatmessagecontainer">
+			<div id="chatmessageinner"></div>
+		</div>
+
+		<div id="sendBox" class="messagebox">
+			<button id="sendButton" class="btn btn-primary send">Envoyer</button>
+			<span class="inputbox">
+				<input type="text" id="msgbox" name="msgbox" class="input-block-level" />
+			</span>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block html_templates %}
+<script id="message" type="text/html">
+		<p>
+			<div class="background-avatar">
+				<img src="{{ '{{ avatar }}' }}" alt="{{ '{{ name }}' }}" class="img-polaroid" />
+			</div>
+			<span class="msgblock">
+				<strong>{{ '{{ name }}' }}</strong> <span class="time">- {{ '{{ time }}' }}</span>
+				<span class="msg">{{ '{{ text }}' }}</span>
+			</span>
+		</p>
+	</script>
+{% endblock %}
+
+{% block javascripts %}
+{% javascripts filter='yui_js'
+		'bundles/acmeiafront/js/jquery-2.0.3.min.js'
+		'bundles/acmeiafront/js/tpl.js'
+		'bundles/acmeiafront/js/ia.js'
+	%}
+<script type="text/javascript" src="{{ asset_url }}"></script>
+	{% endjavascripts %}
+{% endblock %}

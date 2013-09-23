@@ -1,0 +1,51 @@
+{% extends 'AcmeIAFrontBundle:Default:page.html.twig' %}
+
+{% block title %}I.A. Graph (by Xavier Boubert){% endblock %}
+
+{% block stylesheets %}
+{% stylesheets filter='yui_css'
+	'bundles/acmeiafront/css/index.css'
+ %}
+    <link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
+{% endstylesheets %}
+{% endblock %}
+
+{% block body_tag %}style="overflow: auto;"{% endblock %}
+
+{% block body %}
+
+	<div id="chatmessage" class="chatmessage">
+		<h1 class="chat-title">GRAPH I.A. <div>Phrases acquises : <span id="contentCount">{{ content_count }}</span></div></h1>
+
+	{% for sentence in sentences %}
+
+		<div class="graph-item">
+			<div class="column-left">
+				<div>
+					<h3>{{ sentence.sentence }}</h3>
+				</div>
+				{% if sentence.responses|length > 0 %}
+				<div class="column-left-bar"></div>
+				{% endif %}
+			</div>
+			<div class="column-right">
+				{% for response in sentence.responses %}
+
+				<div class="column-right-response {% if loop.first %}first{% endif %}">
+					{% if loop.index0 > 0 %}
+					<div class="column-right-bar"><div></div></div>
+					{% endif %}
+					{{ response.sentence }} <span title="Poids de la phrase">({{ response.weigth }})</span>
+				</div>
+
+				{% endfor %}
+			</div>
+
+			<div class="clearfix"></div>
+		</div>
+
+		{% endfor %}
+
+	</div>
+
+{% endblock %}

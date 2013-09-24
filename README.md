@@ -17,7 +17,7 @@ L'API REST pour lui parler : http://ia-symfony.xavierboubert.fr/actions
 
 Vous pouvez regarder le graphique des réponses apprises sur cette page : http://ia-symfony.xavierboubert.fr/graph
 
-Vous pouvez également tester la version de DEV sur http://ia-symfony.xavierboubert.fr/app_dev/
+Vous pouvez également tester la version de DEV sur http://ia-symfony.xavierboubert.fr/app_dev.php/
 
 Technologies
 --------
@@ -37,8 +37,18 @@ Installation
 --------
 
 - Récupérez les fichiers sur votre serveur.
-- Créez une base de données MySQL puis executez-y le fichier ia.sql (vous pouvez ensuite supprimer ce fichier)
-- Mettez à jour le fichier 'app/config/parameters.yml' avec les infos de connexion de votre base.
+- Pour installer les dépendances de Symfony, utilisez la commande 'php composer.phar install' à la racine du projet.
+
+**Création de la base de données :**
+
+- Mettez à jour le fichier 'app/config/parameters.yml.dist' avec les infos de connexion de votre serveur MySQL.
+- **Soit** vous pouvez créer une base de données MySQL puis y executer le fichier ia.sql
+- **Soit** vous pouvez utiliser Doctrine pour la créer à votre place en utilisant les commandes suivantes (à la racine du projet) :
+	- 'php app/console doctrine:database:create' *qui créera la base de données.*
+	- 'php app/console doctrine:schema:update --force' *qui créera les tables du projet correspondantes aux entitées ORM*.
+
+Dans tous les cas, supprimez ensuite le fichier 'ia.sql'.
+
 
 
 Mise en PROD

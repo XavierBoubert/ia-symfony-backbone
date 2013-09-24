@@ -12,7 +12,8 @@ Demo
 --------
 
 Vous pouvez tester l'I.A. sur cette page et tenter de dialoguer avec elle : http://ia-symfony.xavierboubert.fr
-L'API REST pour lui parler : http://ia-symfony.xavierboubert.fr
+
+L'API REST pour lui parler : http://ia-symfony.xavierboubert.fr/actions
 
 Vous pouvez regarder le graphique des réponses apprises sur cette page : http://ia-symfony.xavierboubert.fr/graph
 

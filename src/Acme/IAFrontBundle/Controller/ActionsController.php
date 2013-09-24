@@ -27,7 +27,10 @@ class ActionsController extends Controller
 		}
 		$data['success'] = $success;
 
-		return new Response(json_encode($data));
+		$response = new Response(json_encode($data));
+		$response->headers->set('Content-Type', 'application/json');
+
+		return $response;
 	}
 
     public function indexAction()
@@ -38,7 +41,7 @@ class ActionsController extends Controller
 			'last_revision' => $this->lastRevision,
 			'version' => $this->version,
 			'actions' => $this-> actions
-		);	
+		);
 
 		return $this->result(true, $result);
     }
@@ -129,7 +132,7 @@ class ActionsController extends Controller
 			'response' => $response->getSentence(),
 			'count' => $count
 		);
-		
+
 		return $this->result(true, $result);
 	}
 }

@@ -33,8 +33,8 @@ class ActionsController extends Controller
 		return $response;
 	}
 
-    public function indexAction()
-    {
+	public function indexAction()
+	{
 		$result = array(
 			'api_name' => $this->name,
 			'author' => $this->author,
@@ -44,10 +44,10 @@ class ActionsController extends Controller
 		);
 
 		return $this->result(true, $result);
-    }
+	}
 
-    public function talkAction(Request $request)
-    {
+	public function talkAction(Request $request)
+	{
 		if(!$request->isMethod('POST')) {
 			return $this->result(false, 'This action need to be in POST method');
 		}
@@ -58,7 +58,7 @@ class ActionsController extends Controller
 		);
 
 		$validator = $this->get('validator');
-	    $errorList = $validator->validate($talk);
+		$errorList = $validator->validate($talk);
 
 		if(count($errorList) > 0) {
 			return $this->result(false, $errorList[0]->getMessage());
@@ -89,8 +89,8 @@ class ActionsController extends Controller
 		}
 		else {
 			$sentence = new Sentence();
-	        $sentence->setSentence($talk->text);
-    	    $sentence->setLinks(array('ids' => array()));
+			$sentence->setSentence($talk->text);
+			$sentence->setLinks(array('ids' => array()));
 			$doctrineManager->persist($sentence);
 			$doctrineManager->flush();
 		}

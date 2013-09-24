@@ -7,8 +7,8 @@ use Acme\IAFrontBundle\Entity\Sentence;
 
 class DefaultController extends Controller
 {
-    public function indexAction()
-    {
+	public function indexAction()
+	{
 		$doctrineManager = $this->getDoctrine()->getManager();
 
 		$resources = array(
@@ -16,17 +16,17 @@ class DefaultController extends Controller
 			'content_count' => (int) $doctrineManager->createQuery('SELECT COUNT(s) FROM AcmeIAFrontBundle:Sentence s')->getSingleScalarResult()
 		);
 
-        return $this->render('AcmeIAFrontBundle:Default:index.html.twig', $resources);
-    }
+		return $this->render('AcmeIAFrontBundle:Default:index.html.twig', $resources);
+	}
 
-    public function graphAction()
-    {
+	public function graphAction()
+	{
 		$doctrineManager = $this->getDoctrine()->getManager();
-        $repository = $this->getDoctrine()->getRepository('AcmeIAFrontBundle:Sentence');
+		$repository = $this->getDoctrine()->getRepository('AcmeIAFrontBundle:Sentence');
 
 		$resources = array(
-            'content_count' => (int) $doctrineManager->createQuery('SELECT COUNT(s) FROM AcmeIAFrontBundle:Sentence s')->getSingleScalarResult()
-        );
+			'content_count' => (int) $doctrineManager->createQuery('SELECT COUNT(s) FROM AcmeIAFrontBundle:Sentence s')->getSingleScalarResult()
+		);
 
 		$query = $repository->createQueryBuilder('s')->orderBy('s.sentence', 'ASC')->setMaxResults(100)->getQuery();
 		$sentences = $query->getResult();
@@ -42,11 +42,11 @@ class DefaultController extends Controller
 				'sentence' => $sentence->getSentence(),
 				'responses' => array()
 			);
-	
+
 			if(count($ids) > 0) {
 				for($j = 0; $j < sizeof($sentences); $j++) {
 					$sentenceResponse = $sentences[$j];
-	
+
 					for($k = 0; $k < count($ids); $k++) {
 						if((int) $ids[$k][0] == (int) $sentenceResponse->getId()) {
 							$sentencesResult[$i]['responses'] []= array(
@@ -62,6 +62,6 @@ class DefaultController extends Controller
 
 		$resources['sentences'] = $sentencesResult;
 
-        return $this->render('AcmeIAFrontBundle:Default:graph.html.twig', $resources);
-    }
+		return $this->render('AcmeIAFrontBundle:Default:graph.html.twig', $resources);
+	}
 }

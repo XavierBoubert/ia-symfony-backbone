@@ -1,15 +1,15 @@
 acme_ia_front_homepage:
-    pattern:  /
-    defaults: { _controller: AcmeIAFrontBundle:Default:index }
+	pattern:  /
+	defaults: { _controller: AcmeIAFrontBundle:Default:index }
 
 acme_ia_front_actions:
-    pattern:  /actions
-    defaults: { _controller: AcmeIAFrontBundle:Actions:index }
+	pattern:  /actions
+	defaults: { _controller: AcmeIAFrontBundle:Actions:index }
 
 acme_ia_front_actions_talk:
-    pattern:  /actions/talk
-    defaults: { _controller: AcmeIAFrontBundle:Actions:talk }
+	pattern:  /actions/talk
+	defaults: { _controller: AcmeIAFrontBundle:Actions:talk }
 
 acme_ia_front_graph:
-    pattern:  /graph
-    defaults: { _controller: AcmeIAFrontBundle:Default:graph }
+	pattern:  /graph
+	defaults: { _controller: AcmeIAFrontBundle:Default:graph }

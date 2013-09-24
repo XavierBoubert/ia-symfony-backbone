@@ -24,38 +24,38 @@ Technologies
 
 Utilisation de ces différentes technologies :
 
-- Symfony 2.x
-- Doctrine
-- Twig
-- PHPUnit
-- Assetic
-- Compression des fichiers CSS et JavaScript avec la YUI Compressor
-- API REST
+* Symfony 2.x
+* Doctrine
+* Twig
+* PHPUnit
+* Assetic
+* Compression des fichiers CSS et JavaScript avec la YUI Compressor
+* API REST
 
 
 Installation
 --------
 
-- Récupérez les fichiers sur votre serveur.
-- Pour installer les dépendances de Symfony, utilisez la commande 'php composer.phar install' à la racine du projet. Il vous demandera les identifiants de la base de données que le projet utilisera.
+* Récupérez les fichiers sur votre serveur.
+* Pour installer les dépendances de Symfony, utilisez la commande `php composer.phar install` à la racine du projet. Il vous demandera les identifiants de la base de données que le projet utilisera.
 
 **Création de la base de données :**
 
-- **Soit** vous pouvez créer une base de données MySQL puis y executer le fichier ia.sql
-- **Soit** vous pouvez utiliser Doctrine pour la créer à votre place en utilisant les commandes suivantes (à la racine du projet) :
-	- 'php app/console doctrine:database:create' *qui créera la base de données.*
-	- 'php app/console doctrine:schema:update --force' *qui créera les tables du projet correspondantes aux entitées ORM*.
+* **Soit** vous pouvez créer une base de données MySQL puis y executer le fichier ia.sql
+* **Soit** vous pouvez utiliser Doctrine pour la créer à votre place en utilisant les commandes suivantes (à la racine du projet) :
+	* `php app/console doctrine:database:create` *qui créera la base de données.*
+	* `php app/console doctrine:schema:update --force` *qui créera les tables du projet correspondantes aux entitées ORM*.
 
-Dans tous les cas, supprimez ensuite le fichier 'ia.sql'.
+Dans tous les cas, supprimez ensuite le fichier `ia.sql`.
 
 
 Mise en PROD
 --------
 
-Utilisez le script 'app/mep.sh pour executer la mise en production du site (cela reset le cache et compile les fichiers JavaScript et CSS)
+Utilisez le script `app/mep.sh` pour executer la mise en production du site (cela reset le cache et compile les fichiers JavaScript et CSS)
 
 
 Tests Unitaires
 --------
 
-Utilisez le script 'app/unittesting.sh' pour executer la génération des tests unitaires
+Utilisez le script `app/unittesting.sh` pour executer la génération des tests unitaires

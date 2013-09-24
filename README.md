@@ -37,18 +37,16 @@ Installation
 --------
 
 - Récupérez les fichiers sur votre serveur.
-- Pour installer les dépendances de Symfony, utilisez la commande 'php composer.phar install' à la racine du projet.
+- Pour installer les dépendances de Symfony, utilisez la commande 'php composer.phar install' à la racine du projet. Il vous demandera les identifiants de la base de données que le projet utilisera.
 
 **Création de la base de données :**
 
-- Mettez à jour le fichier 'app/config/parameters.yml.dist' avec les infos de connexion de votre serveur MySQL.
 - **Soit** vous pouvez créer une base de données MySQL puis y executer le fichier ia.sql
 - **Soit** vous pouvez utiliser Doctrine pour la créer à votre place en utilisant les commandes suivantes (à la racine du projet) :
 	- 'php app/console doctrine:database:create' *qui créera la base de données.*
 	- 'php app/console doctrine:schema:update --force' *qui créera les tables du projet correspondantes aux entitées ORM*.
 
 Dans tous les cas, supprimez ensuite le fichier 'ia.sql'.
-
 
 
 Mise en PROD
